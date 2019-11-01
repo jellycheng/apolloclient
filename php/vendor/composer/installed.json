@@ -1,0 +1,83 @@
+[
+    {
+        "name": "cjs/env",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jellycheng/cjsEnv.git",
+            "reference": "6b8b17d1d5ace640438bcdfdd61f1783c4879855"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jellycheng/cjsEnv/zipball/6b8b17d1d5ace640438bcdfdd61f1783c4879855",
+            "reference": "6b8b17d1d5ace640438bcdfdd61f1783c4879855",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2019-11-01T01:44:04+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [],
+            "files": [
+                "src/Helper.php"
+            ],
+            "psr-4": {
+                "CjsEnv\\": "src/"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "jelly",
+                "email": "42282367@qq.com"
+            }
+        ],
+        "description": "The cjs env package.",
+        "homepage": "http://www.qianguopai.com",
+        "support": {
+            "source": "https://github.com/jellycheng/cjsEnv/tree/master",
+            "issues": "https://github.com/jellycheng/cjsEnv/issues"
+        }
+    },
+    {
+        "name": "cjs/phpsignal",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jellycheng/phpsignal.git",
+            "reference": "a77637c32f201c5e42ca331bb30c3d447ae8cf7e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jellycheng/phpsignal/zipball/a77637c32f201c5e42ca331bb30c3d447ae8cf7e",
+            "reference": "a77637c32f201c5e42ca331bb30c3d447ae8cf7e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2019-09-11T00:29:56+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "CjsSignal\\": "src/"
+            },
+            "files": []
+        },
+        "autoload-dev": {
+            "psr-4": []
+        },
+        "support": {
+            "source": "https://github.com/jellycheng/phpsignal/tree/master",
+            "issues": "https://github.com/jellycheng/phpsignal/issues"
+        }
+    }
+]
