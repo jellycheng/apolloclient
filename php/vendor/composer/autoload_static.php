@@ -16,6 +16,7 @@ class ComposerStaticInit7245fa00a55db65dc698e74ab301b638
         array (
             'CjsSignal\\' => 10,
             'CjsEnv\\' => 7,
+            'CjsCurl\\' => 8,
         ),
         'A' => 
         array (
@@ -31,6 +32,10 @@ class ComposerStaticInit7245fa00a55db65dc698e74ab301b638
         'CjsEnv\\' => 
         array (
             0 => __DIR__ . '/..' . '/cjs/env/src',
+        ),
+        'CjsCurl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cjs/curl/src',
         ),
         'App\\' => 
         array (

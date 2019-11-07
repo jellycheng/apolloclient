@@ -1,5 +1,53 @@
 [
     {
+        "name": "cjs/curl",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jellycheng/cjsCurl.git",
+            "reference": "e85e2815cfce880b8c9ff1986f13933b61cd358a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jellycheng/cjsCurl/zipball/e85e2815cfce880b8c9ff1986f13933b61cd358a",
+            "reference": "e85e2815cfce880b8c9ff1986f13933b61cd358a",
+            "shasum": "",
+            "mirrors": [
+                {
+                    "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                    "preferred": true
+                }
+            ]
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.4.0"
+        },
+        "time": "2019-03-11T08:34:27+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [],
+            "files": [],
+            "psr-4": {
+                "CjsCurl\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "jelly",
+                "email": "42282367@qq.com"
+            }
+        ],
+        "description": "The cjs curl package.",
+        "homepage": "http://www.nfangbian.com"
+    },
+    {
         "name": "cjs/env",
         "version": "dev-master",
         "version_normalized": "9999999-dev",

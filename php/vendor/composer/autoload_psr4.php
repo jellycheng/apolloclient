@@ -8,5 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'CjsSignal\\' => array($vendorDir . '/cjs/phpsignal/src'),
     'CjsEnv\\' => array($vendorDir . '/cjs/env/src'),
+    'CjsCurl\\' => array($vendorDir . '/cjs/curl/src'),
     'App\\' => array($baseDir . '/app'),
 );
