@@ -2,6 +2,9 @@
 /**
  * php bin/demo01.php 应用名
  * php bin/demo01.php manage_api
+ * php bin/demo01.php mobile-api_default_application
+ * php bin/demo01.php manage-api_devci01_application
+ * php bin/demo01.php manage-api_devci01_PHP.feature_app2.1.0_20191030
  */
 require_once dirname(__DIR__) . '/bootstrap/autoload.php';
 $apolloAppConfig = require_once APOLLOCLIENT_ROOT . '/app/Config/ApolloApp.php';
@@ -18,6 +21,7 @@ $apollo->setConfigServer($apolloServer);
 $apollo->setAppId($apolloAppConfig[$appname]['appid']);
 
 $namespace_name = $apolloAppConfig[$appname]['namespace_name']; //命名空间
+//$namespace_name = "PHP.feature_app2.1.0_20191030";
 $apollo->setNamespaceName($namespace_name);
 
 $clientIp = $apolloAppConfig[$appname]['client_ip'];
@@ -33,7 +37,7 @@ $res = $apollo->getConfigfiles4Cache();
 //var_export($res);
 if(!$res['code']) {
     $saveFile = $apolloAppConfig[$appname]['env_file'];
-    App\Util\checkAndCreateDir(dirname($saveFile));
+    \App\Util\checkAndCreateDir(dirname($saveFile));
     $data = $res['data'];
     \App\Util\saveEnvData($saveFile, $data);
 }

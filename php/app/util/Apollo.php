@@ -9,9 +9,7 @@ class Apollo
     protected $clusterName = 'default'; //集群名
     protected $clientIp = '127.0.0.1'; //绑定IP做灰度发布用
     protected $namespaceName = 'application'; //默认值 application
-    protected $notifications = []; //
     protected $pullTimeout = 10; //获取某个namespace配置的请求超时时间
-    protected $intervalTimeout = 60; //每次请求获取apollo配置变更时的超时时间
     protected $is_debug = true;
 
     public function __construct()
@@ -100,7 +98,7 @@ class Apollo
                 //发生错误，todo log
                 $content = '';
                 $ret['code'] = 9999;
-                echo "ERROR:" . __FILE__ . PHP_EOL;
+                //echo "ERROR:" . __FILE__ . PHP_EOL;
             }
         } else {
             $ret['msg'] = $curlObj->getErrmsg();
@@ -124,7 +122,6 @@ class Apollo
                         $releaseKey,
                         $this->getClientIp()
                     );
-        //echo $url . PHP_EOL;
         $curlObj = Curl::boot()->get($url);
         $ret['code'] = $curlObj->getErrno();
         $content = '';
@@ -137,7 +134,7 @@ class Apollo
                 //发生错误，todo log
                 $content = '';
                 $ret['code'] = 9999;
-                echo "ERROR:" . __FILE__ . PHP_EOL;
+                //echo "ERROR:" . __FILE__ . PHP_EOL;
             }
         } else {
             $ret['msg'] = $curlObj->getErrmsg();
@@ -147,33 +144,39 @@ class Apollo
     }
 
     //长链接监听，服务端会hold住请求60秒
-    public function getNotificationsData($notifications = []) {
-
+    public function getNotificationsData($notifications = [], $callback = null) {
         $ret = [
             'code'=>'',
             'msg'=>'',
             'data'=>'',
         ];
+        $notifications = \App\Util\notificationsData($notifications);
+        $formatNotifications = \App\Util\formatNotificationsHandle($notifications);
         $url = sprintf('%s/notifications/v2?appId=%s&cluster=%s&notifications=%s',
                         rtrim($this->getConfigServer(), '/'),
                         $this->getAppId(),
                         $this->getClusterName(),
-                        json_encode(notifications)
+                        urlencode(json_encode($notifications))
                     );
-        //echo $url . PHP_EOL;
+        //echo $url . PHP_EOL;exit;
         $curlObj = Curl::boot()->get($url);
         $ret['code'] = $curlObj->getErrno();
         $content = '';
         if(!$ret['code']) {
             $content = $curlObj->getResponse();
             $content = \json_decode($content, true);
-            if(isset($content['status']) && $content['status'] == 404
-                && isset($content['error']) && $content['error'] == 'Not Found'
-            ) {
-                //发生错误，todo log
-                $content = '';
-                $ret['code'] = 9999;
-                echo "ERROR:" . __FILE__ . PHP_EOL;
+            if(is_array($content)) {
+                foreach ($content as $k=>$v) {
+                    if(isset($v['namespaceName']) && isset($formatNotifications[$v['namespaceName']])
+                        && $v['notificationId']!=$formatNotifications[$v['namespaceName']]['notificationId']
+                    ) {
+                        //有变化，重新生成env
+                        //echo '有变化，重新生成env=' . $v['notificationId'] . PHP_EOL;
+                        if($callback instanceof \Closure) {
+                            call_user_func($callback, $v);
+                        }
+                    }
+                }
             }
         } else {
             $ret['msg'] = $curlObj->getErrmsg();
