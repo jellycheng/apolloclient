@@ -10,4 +10,5 @@ log/*
 .project
 .settings
 .htaccess
+nohup.out
 php/app/Config/Developer/*

@@ -1,7 +1,7 @@
 <?php
 /**
  * 格式：php bin/start.php 应用名 开发者
- * 示例：php bin/start.php mobile-api dev01
+ * 示例：php bin/start.php mobile-api devci01
  *
  */
 require_once dirname(__DIR__) . '/bootstrap/autoload.php';
