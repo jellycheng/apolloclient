@@ -64,8 +64,11 @@ $loop = \CjsSignal\Loop::getInstance();
 $i = 0;
 while($loop()){
     $i++;
-    sleep(3);
-    echo $cloudname . $i . PHP_EOL;
+    if($i%100==0){
+       sleep(3);
+       $i = 0;
+    }
+    //echo $cloudname . $i . PHP_EOL;
     $res = $apollo->getNotificationsData($formatNotifications, function($info) use ($apollo, &$formatNotifications,$apolloAppConfig){
         //echo "====" . var_export($info, true) . PHP_EOL;
         $apollo->setNamespaceName($info['namespaceName']);

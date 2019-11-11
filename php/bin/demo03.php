@@ -45,6 +45,10 @@ $loop = \CjsSignal\Loop::getInstance();
 $i = 0;
 while($loop()){
     $i++;
+    if($i%100==0){
+       sleep(3);
+       $i = 0;
+    }
     echo $i . PHP_EOL;
     //
 }
