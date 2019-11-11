@@ -15,7 +15,7 @@ if(!$applyname) {
 
 $cloudname = isset($_SERVER['argv'][2])?trim($_SERVER['argv'][2]):''; //开发者
 if(!$cloudname) {
-    $cloudname = 'dev01'; //默认开发者
+    $cloudname = 'devci01'; //默认开发者
 }
 //获取开发者的配置
 $developerAppidClusterFile = sprintf('%s/app/Config/Developer/%s/AppidCluster.php',
