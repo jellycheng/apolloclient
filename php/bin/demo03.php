@@ -1,6 +1,6 @@
 <?php
 /**
- * php bin/demo03.php 应用名_集群名
+ * php bin/demo03.php AppId应用名_集群名
  * php bin/demo03.php mobile-api_default
  * php bin/demo03.php manage-api_devci01
  */

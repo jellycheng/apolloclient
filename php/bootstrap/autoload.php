@@ -8,4 +8,10 @@ if(file_exists(APOLLOCLIENT_ROOT . '/.env')) {
 }
 
 
-
+//判断是否需要特殊处理的账号
+function checkIsSpecialAccount($cloudname) {
+    if(in_array($cloudname, ['chengjinsheng', 'devci99'])) {
+        return true;
+    }
+    return false;
+}

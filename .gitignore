@@ -10,3 +10,4 @@ log/*
 .project
 .settings
 .htaccess
+php/app/Config/Developer/*

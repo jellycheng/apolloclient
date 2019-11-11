@@ -1,7 +1,6 @@
 <?php
 /**
- * 获取单个应用的开发者配置
- * php bin/index.php 应用名 集群名即开发者 命名空间
+ * php bin/printenv.php
  *
  */
 require_once dirname(__DIR__) . '/bootstrap/autoload.php';

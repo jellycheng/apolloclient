@@ -1,5 +1,6 @@
 <?php
 /**
+ * 应用名 可由 appid+集群名即开发者+命名空间 组成
  * php bin/demo01.php 应用名
  * php bin/demo01.php manage_api
  * php bin/demo01.php mobile-api_default_application
