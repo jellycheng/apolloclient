@@ -20,14 +20,16 @@ if(!$cloudname) {
 //获取开发者的配置
 $developerAppidClusterFile = sprintf('%s/app/Config/Developer/%s/AppidCluster.php',
                                 APOLLOCLIENT_ROOT,
-                                    $cloudname);
+                                    ucfirst($cloudname)
+                                );
 if(!file_exists($developerAppidClusterFile)) {
     exit("开发者配置文件不存在：" . $developerAppidClusterFile . PHP_EOL);
 }
 $apolloAppidClusterConfig = require_once $developerAppidClusterFile;
 $developerApolloAppFile = sprintf('%s/app/Config/Developer/%s/ApolloApp.php',
                                 APOLLOCLIENT_ROOT,
-                                     $cloudname);
+                                     ucfirst($cloudname)
+                                );
 $apolloAppConfig = require_once $developerApolloAppFile;
 $appname = $applyname . '_' . $cloudname;
 
