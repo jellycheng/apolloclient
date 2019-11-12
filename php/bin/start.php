@@ -15,7 +15,8 @@ if(!$applyname) {
 
 $cloudname = isset($_SERVER['argv'][2])?trim($_SERVER['argv'][2]):''; //开发者
 if(!$cloudname) {
-    $cloudname = 'devci01'; //默认开发者
+    //$cloudname = 'devci01'; //默认开发者
+    exit("开发者不能为空：php bin/start.php 应用名 开发者 " . PHP_EOL);
 }
 //获取开发者的配置
 $developerAppidClusterFile = sprintf('%s/app/Config/Developer/%s/AppidCluster.php',
