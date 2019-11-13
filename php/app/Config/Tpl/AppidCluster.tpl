@@ -39,5 +39,18 @@ return [
         'client_ip'=>'127.0.0.1',
         'intro'=>'订单服务',
     ],
-
+    'sms-service_{$cloud_name}'=>[
+        'appid'=>'sms-service',
+        'cluster_name'=>'{$cluster_name}',
+        'namespace_name'=>['application', {$namespace_name}],
+        'client_ip'=>'127.0.0.1',
+        'intro'=>'短信服务',
+    ],
+    'goods-service_{$cloud_name}'=>[
+        'appid'=>'goods-service',
+        'cluster_name'=>'{$cluster_name}',
+        'namespace_name'=>['application', {$namespace_name}],
+        'client_ip'=>'127.0.0.1',
+        'intro'=>'商品服务',
+    ],
 ];
