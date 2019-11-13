@@ -33,7 +33,9 @@ $developerApolloAppFile = sprintf('%s/app/Config/Developer/%s/ApolloApp.php',
                                 );
 $apolloAppConfig = require_once $developerApolloAppFile;
 $appname = $applyname . '_' . $cloudname;
-
+if(!isset($apolloAppidClusterConfig[$appname])) {
+    exit("配置文件：" . $developerAppidClusterFile . " 未配置" . $appname . PHP_EOL);
+}
 
 $apolloServer = env('APOLLO_SERVER', "http://127.0.0.1:8080");
 $apollo->setConfigServer($apolloServer);
