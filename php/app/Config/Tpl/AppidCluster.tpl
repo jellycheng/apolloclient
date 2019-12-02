@@ -1,7 +1,7 @@
 <?php
 /**
  * 阿波罗应用 - 一个开发者的模板配置示例
- * 一个 appid+集群名开发者 一个配置key
+ * 一个 appid（仓库名）+集群名开发者 一个配置key
  */
 return [
     'mobile-api_{$cloud_name}'=>[
@@ -18,6 +18,27 @@ return [
         'client_ip'=>'127.0.0.1',
         'intro'=>'总后台api',
     ],
+    'shop-api_{$cloud_name}'=>[
+        'appid'=>'shop-api',
+        'cluster_name'=>'{$cluster_name}',
+        'namespace_name'=>['application', {$namespace_name}],
+        'client_ip'=>'127.0.0.1',
+        'intro'=>'商家后台api',
+    ],
+    'supplier-api_{$cloud_name}'=>[
+        'appid'=>'supplier-api',
+        'cluster_name'=>'{$cluster_name}',
+        'namespace_name'=>['application', {$namespace_name}],
+        'client_ip'=>'127.0.0.1',
+        'intro'=>'供应商后台api',
+    ],
+    'permission-service_{$cloud_name}'=>[
+        'appid'=>'permission-service',
+        'cluster_name'=>'{$cluster_name}',
+        'namespace_name'=>['application', {$namespace_name}],
+        'client_ip'=>'127.0.0.1',
+        'intro'=>'权限服务',
+    ],
     'user-service_{$cloud_name}'=>[
         'appid'=>'user-service',
         'cluster_name'=>'{$cluster_name}',
@@ -31,6 +52,13 @@ return [
         'namespace_name'=>['application', {$namespace_name}],
         'client_ip'=>'127.0.0.1',
         'intro'=>'优惠券服务',
+    ],
+    'cart-service_{$cloud_name}'=>[
+        'appid'=>'cart-service',
+        'cluster_name'=>'{$cluster_name}',
+        'namespace_name'=>['application', {$namespace_name}],
+        'client_ip'=>'127.0.0.1',
+        'intro'=>'购物车服务',
     ],
     'order-service_{$cloud_name}'=>[
         'appid'=>'order-service',
@@ -52,5 +80,40 @@ return [
         'namespace_name'=>['application', {$namespace_name}],
         'client_ip'=>'127.0.0.1',
         'intro'=>'商品服务',
+    ],
+    'marketing-service_{$cloud_name}'=>[
+        'appid'=>'marketing-service',
+        'cluster_name'=>'{$cluster_name}',
+        'namespace_name'=>['application', {$namespace_name}],
+        'client_ip'=>'127.0.0.1',
+        'intro'=>'营销中心',
+    ],
+    'stock-service_{$cloud_name}'=>[
+        'appid'=>'stock-service',
+        'cluster_name'=>'{$cluster_name}',
+        'namespace_name'=>['application', {$namespace_name}],
+        'client_ip'=>'127.0.0.1',
+        'intro'=>'库存中心',
+    ],
+    'message-service_{$cloud_name}'=>[
+        'appid'=>'message-service',
+        'cluster_name'=>'{$cluster_name}',
+        'namespace_name'=>['application', {$namespace_name}],
+        'client_ip'=>'127.0.0.1',
+        'intro'=>'消息中心',
+    ],
+    'search-service_{$cloud_name}'=>[
+        'appid'=>'search-service',
+        'cluster_name'=>'{$cluster_name}',
+        'namespace_name'=>['application', {$namespace_name}],
+        'client_ip'=>'127.0.0.1',
+        'intro'=>'搜索服务',
+    ],
+    'catalog-service_{$cloud_name}'=>[
+        'appid'=>'catalog-service',
+        'cluster_name'=>'{$cluster_name}',
+        'namespace_name'=>['application', {$namespace_name}],
+        'client_ip'=>'127.0.0.1',
+        'intro'=>'字典、地址库等服务',
     ],
 ];
