@@ -2,22 +2,23 @@
 /**
  * 格式：php bin/start.php 应用名 开发者
  * 示例：php bin/start.php mobile-api devci01
- *
+ *      php bin/start.php mobile-api default
+ * 
  */
 require_once dirname(__DIR__) . '/bootstrap/autoload.php';
 use App\Util\Apollo;
 $apollo = new Apollo();
 
-$applyname = isset($_SERVER['argv'][1])?trim($_SERVER['argv'][1]):''; //应用名
+$applyname = isset($_SERVER['argv'][1])?trim($_SERVER['argv'][1]):''; //应用名,git仓库名
 if(!$applyname) {
     $applyname = 'mobile-api'; //默认应用名
 }
 
 $cloudname = isset($_SERVER['argv'][2])?trim($_SERVER['argv'][2]):''; //开发者
 if(!$cloudname) {
-    //$cloudname = 'devci01'; //默认开发者
     exit("开发者不能为空：php bin/start.php 应用名 开发者 " . PHP_EOL);
 }
+
 //获取开发者的配置
 $developerAppidClusterFile = sprintf('%s/app/Config/Developer/%s/AppidCluster.php',
                                 APOLLOCLIENT_ROOT,
@@ -27,6 +28,7 @@ if(!file_exists($developerAppidClusterFile)) {
     exit("开发者配置文件不存在：" . $developerAppidClusterFile . PHP_EOL);
 }
 $apolloAppidClusterConfig = require_once $developerAppidClusterFile;
+
 $developerApolloAppFile = sprintf('%s/app/Config/Developer/%s/ApolloApp.php',
                                 APOLLOCLIENT_ROOT,
                                      ucfirst($cloudname)

@@ -5,7 +5,7 @@
  */
 return [
     'mobile-api_default'=>[
-                'appid'=>'mobile-api', //应用ID
+                'appid'=>'mobile-api', //应用ID，git仓库名
                 'cluster_name'=>'default', //集群名，默认写default
                 'namespace_name'=>['application'],//命名空间，默认写 application
                 'client_ip'=>'127.0.0.1', //
