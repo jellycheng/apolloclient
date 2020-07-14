@@ -109,6 +109,14 @@ return [
         'env_dir_prefix'=>'/data/www',
         'intro'=>'库存中心',
     ],
+    'mail-service_{$cloud_name}'=>[
+        'appid'=>'mail-service',
+        'cluster_name'=>'{$cluster_name}',
+        'namespace_name'=>['application', {$namespace_name}],
+        'client_ip'=>'127.0.0.1',
+        'env_dir_prefix'=>'/data/www',
+        'intro'=>'邮箱服务',
+    ],
     'message-service_{$cloud_name}'=>[
         'appid'=>'message-service',
         'cluster_name'=>'{$cluster_name}',
@@ -141,5 +149,12 @@ return [
         'env_dir_prefix'=>'/data/www',
         'intro'=>'第三方令牌服务，如微信登录',
     ],
-
+    'daojia-service_{$cloud_name}'=>[
+        'appid'=>'daojia-service',
+        'cluster_name'=>'{$cluster_name}',
+        'namespace_name'=>['application', {$namespace_name}],
+        'client_ip'=>'127.0.0.1',
+        'env_dir_prefix'=>'/data/www',
+        'intro'=>'到家服务',
+    ],
 ];
